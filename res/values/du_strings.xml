@@ -123,4 +123,10 @@
     <string name="show_searchbar_title">Show search bar</string>
     <string name="show_searchbar_summary">Show the search bar on the home screen</string>
 
+    <!-- Search engine -->
+    <string name="search_provider_title">Searchbar search engine</string>
+    <string name="search_provider_google" translatable="false">Google</string>
+    <string name="search_provider_bing" translatable="false">Bing</string>
+    <string name="search_provider_duckduckgo" translatable="false">DuckDuckGo</string>
+
 </resources>
