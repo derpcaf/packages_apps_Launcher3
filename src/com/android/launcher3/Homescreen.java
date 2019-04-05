@@ -40,6 +40,7 @@ public class Homescreen extends SettingsActivity implements PreferenceFragment.O
 
     static final String KEY_FEED_INTEGRATION = "pref_feed_integration";
     static final String PREF_THEME_STYLE_KEY = "pref_theme_style";
+    static final String KEY_SHOW_SEARCHBAR = "pref_show_searchbar";
 
     @Override
     protected void onCreate(final Bundle bundle) {
@@ -80,11 +81,15 @@ public class Homescreen extends SettingsActivity implements PreferenceFragment.O
             assert actionBar != null;
             actionBar.setDisplayHomeAsUpEnabled(true);
 
+            SwitchPreference showSearchBar = (SwitchPreference)
+		    findPreference(KEY_SHOW_SEARCHBAR);
+
             SwitchPreference feedIntegration = (SwitchPreference)
                     findPreference(KEY_FEED_INTEGRATION);
 
             if (!XtendedUtils.isPackageInstalled(mContext, LauncherTab.SEARCH_PACKAGE)) {
                 getPreferenceScreen().removePreference(feedIntegration);
+                getPreferenceScreen().removePreference(showSearchBar);
             }
 
             // Setup allow rotation preference
@@ -146,6 +151,13 @@ public class Homescreen extends SettingsActivity implements PreferenceFragment.O
                     String newValue = (String) o;
                     int valueIndex = mThemeStyle.findIndexOfValue(newValue);
                     mThemeStyle.setSummary(mThemeStyle.getEntries()[valueIndex]);
+                    return true;
+                }
+            });
+
+            showSearchBar.setOnPreferenceChangeListener(new OnPreferenceChangeListener() {
+                 public boolean onPreferenceChange(Preference preference, Object newValue) {
+                    LauncherAppState.getInstanceNoCreate().setNeedsRestart();
                     return true;
                 }
             });

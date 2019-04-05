@@ -119,4 +119,8 @@
     <string name="theme_style_light">Light style</string>
     <string name="theme_style_dark">Dark style</string>
 
+    <!-- Show searchbar -->
+    <string name="show_searchbar_title">Show search bar</string>
+    <string name="show_searchbar_summary">Show the search bar on the home screen</string>
+
 </resources>

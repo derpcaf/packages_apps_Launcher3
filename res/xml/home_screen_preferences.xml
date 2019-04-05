@@ -9,6 +9,13 @@
         android:persistent="true" />
 
     <SwitchPreference
+        android:key="pref_show_searchbar"
+        android:title="@string/show_searchbar_title"
+        android:summary="@string/show_searchbar_summary"
+        android:defaultValue="true"
+        android:persistent="true"/>
+
+    <SwitchPreference
         android:key="pref_lock_desktop"
         android:title="@string/lock_desktop_title"
         android:summary="@string/lock_desktop_summary"
