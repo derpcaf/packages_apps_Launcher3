@@ -113,7 +113,6 @@
         <activity
             android:name="com.android.launcher3.SettingsActivity"
             android:label="@string/settings_title"
-            android:theme="@android:style/Theme.DeviceDefault.Settings"
             android:parentActivityName="com.android.launcher3.Launcher"
             android:autoRemoveFromRecents="true">
             <intent-filter>
@@ -126,7 +125,6 @@
         <activity
             android:name="com.android.launcher3.Homescreen"
             android:label="@string/home_category_title"
-            android:theme="@android:style/Theme.DeviceDefault.Settings"
             android:autoRemoveFromRecents="true"
             android:parentActivityName="com.android.launcher3.SettingsActivity" />
 
@@ -134,7 +132,6 @@
         <activity
             android:name="com.android.launcher3.Icons"
             android:label="@string/icons_category_title"
-            android:theme="@android:style/Theme.DeviceDefault.Settings"
             android:autoRemoveFromRecents="true"
             android:parentActivityName="com.android.launcher3.SettingsActivity" />
 
@@ -142,7 +139,6 @@
         <activity
             android:name="com.android.launcher3.AppDrawer"
             android:label="@string/app_drawer_category_title"
-            android:theme="@android:style/Theme.DeviceDefault.Settings"
             android:autoRemoveFromRecents="true"
             android:parentActivityName="com.android.launcher3.SettingsActivity" />
 
@@ -150,7 +146,6 @@
         <activity
             android:name="com.android.launcher3.Gestures"
             android:label="@string/gestures_category_title"
-            android:theme="@android:style/Theme.DeviceDefault.Settings"
             android:autoRemoveFromRecents="true"
             android:parentActivityName="com.android.launcher3.SettingsActivity" />
 
@@ -158,15 +153,13 @@
         <activity
             android:name="com.android.launcher3.HiddenAppsActivity"
             android:autoRemoveFromRecents="true"
-            android:label="@string/hidden_app"
-            android:theme="@android:style/Theme.DeviceDefault.Settings" />
+	    android:label="@string/hidden_app" />
 
         <!-- Per app icon picker -->
         <activity
             android:name="com.android.launcher3.ChooseIconActivity"
             android:autoRemoveFromRecents="true"
-            android:label="@string/icon_chooser"
-            android:theme="@android:style/Theme.DeviceDefault.Settings" />
+	    android:label="@string/icon_chooser" />
 
         <!--
         The settings provider contains Home's data, like the workspace favorites. The permissions
