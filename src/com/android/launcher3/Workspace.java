@@ -58,8 +58,7 @@ import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.widget.Toast;
 
-import com.android.internal.util.xtended.ActionUtils;
-import com.android.internal.util.xtended.XtendedUtils;
+import com.android.internal.util.derpcaf.DerpcafUtils;
 
 import com.android.launcher3.Launcher.LauncherOverlay;
 import com.android.launcher3.LauncherAppWidgetHost.ProviderChangedListener;
@@ -335,28 +334,28 @@ public class Workspace extends PagedView<WorkspacePageIndicator>
             case 0: // Stock
                 break;
             case 1: // Screen off
-                ActionUtils.switchScreenOff(getContext());
+                DerpcafUtils.switchScreenOff(getContext());
                 break;
             case 2: // Flashlight
-                ActionUtils.toggleCameraFlash();
+                DerpcafUtils.toggleCameraFlash();
                 break;
             case 3: // Google search
                 launchGoogleSearch(getContext());
                 break;
             case 4: // Volume panel
-                ActionUtils.toggleVolumePanel(getContext());
+                DerpcafUtils.toggleVolumePanel(getContext());
                 break;
             case 5: // Clear notifications
-                ActionUtils.clearAllNotifications();
+                DerpcafUtils.clearAllNotifications();
                 break;
             case 6: // Screenshot
-                ActionUtils.takeScreenshot(true);
+                DerpcafUtils.takeScreenshot(true);
                 break;
             case 7: // Notifications
-                ActionUtils.toggleNotifications();
+                DerpcafUtils.toggleNotifications();
                 break;
             case 8: // QS panel
-                ActionUtils.toggleQsPanel();
+                DerpcafUtils.toggleQsPanel();
                 break;
         }
     }
@@ -3563,7 +3562,7 @@ public class Workspace extends PagedView<WorkspacePageIndicator>
         launchIntent.setPackage("com.google.android.googlequicksearchbox");
         launchIntent.setClassName("com.google.android.googlequicksearchbox",
                 "com.google.android.googlequicksearchbox.SearchActivity");
-        if (XtendedUtils.isPackageInstalled(context,
+        if (DerpcafUtils.isPackageInstalled(context,
                 "com.google.android.googlequicksearchbox")) {
             context.startActivity(launchIntent);
         } else {

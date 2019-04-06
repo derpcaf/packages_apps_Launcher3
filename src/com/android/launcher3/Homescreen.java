@@ -34,7 +34,7 @@ import android.provider.Settings;
 import android.text.TextUtils;
 import android.view.MenuItem;
 
-import com.android.internal.util.xtended.XtendedUtils;
+import com.android.internal.util.derpcaf.DerpcafUtils;
 
 public class Homescreen extends SettingsActivity implements PreferenceFragment.OnPreferenceStartFragmentCallback {
 
@@ -87,7 +87,7 @@ public class Homescreen extends SettingsActivity implements PreferenceFragment.O
             SwitchPreference feedIntegration = (SwitchPreference)
                     findPreference(KEY_FEED_INTEGRATION);
 
-            if (!XtendedUtils.isPackageInstalled(mContext, LauncherTab.SEARCH_PACKAGE)) {
+            if (!DerpcafUtils.isPackageInstalled(mContext, LauncherTab.SEARCH_PACKAGE)) {
                 getPreferenceScreen().removePreference(feedIntegration);
                 getPreferenceScreen().removePreference(showSearchBar);
             }
@@ -163,7 +163,7 @@ public class Homescreen extends SettingsActivity implements PreferenceFragment.O
             });
         
             ListPreference searchProvider = (ListPreference) findPreference(Utilities.SEARCH_PROVIDER_KEY);
-            if (XtendedUtils.isPackageInstalled(mContext, LauncherTab.SEARCH_PACKAGE)) {
+            if (DerpcafUtils.isPackageInstalled(mContext, LauncherTab.SEARCH_PACKAGE)) {
                 getPreferenceScreen().removePreference(searchProvider);
             } else {
                 searchProvider.setSummary(searchProvider.getEntry());

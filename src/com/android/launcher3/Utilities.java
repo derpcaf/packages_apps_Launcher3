@@ -69,7 +69,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import com.android.internal.util.xtended.XtendedUtils;
+import com.android.internal.util.derpcaf.DerpcafUtils;
 
 /**
  * Various utilities shared amongst the Launcher's classes.
@@ -760,7 +760,7 @@ public final class Utilities {
 
     public static boolean showQSB(Context context) {
         SharedPreferences prefs = getPrefs(context.getApplicationContext());
-        if (!XtendedUtils.isPackageInstalled(context, LauncherTab.SEARCH_PACKAGE)) {
+        if (!DerpcafUtils.isPackageInstalled(context, LauncherTab.SEARCH_PACKAGE)) {
             return false;
         }
         return prefs.getBoolean(Homescreen.KEY_SHOW_SEARCHBAR, false);
